@@ -6,93 +6,174 @@
     <title>paerarason</title>
 </head>
 <body>
+    <div class='navbar'>
+        <button id="toggleButton">about</button>
+        <button id="toggleButton">Alma mater</button>
+        <button id="toggleButton">experience</button>
+        <button id="toggleButton">Projects</button>
+        <button id="toggleButton">profiles</button>
+
+    </div>
+
     <div class='about'>
         <style>
-          @import url('https://fonts.googleapis.com/css2?family=Bevan&family=Rubik+Mono+One&display=swap');</style>
-         
-          <section class="layout">
-             <div class="sidebar">
-             <h1 class='heading'>Paerarason </h1><p class='para'>     
-         
-           Alma mater at Madras Institute of Technology,
-           I obtained a B.E in Production Engineeing (2022). 
-           Eventually did intern at Advertyzement 2023 feb onwards from on now, 
-           A Backend Dev capable of manage fastAPI microservices and a bit of Devops in AWS as well.
-           after working on the Python's Asynchronous functions, I went crazy about concurreny and multithreading so it eventually lead to Go For 
-           few of my hobby projects i code that in golang i loves go's concurreny  
-           <br></br> <br></br>
-           I believe that<br></br> "  You con't understand everything. but, 
-  you should push yourself to understand 
-  the system  "
-         </p></div>
-             <div class="body">
-              <img  class="dp" src={profile} alt="Profile" width="300"> 
-              </img>
-             </div>
+            @import url('https://fonts.googleapis.com/css2?family=Bevan&family=Rubik+Mono+One&display=swap');
+        </style>
+        <section class="layout">
+            <div class="sidebar">
+      
+                <div class="experience">
+                  <h1 class='heading'>Alma mater</h1>
+                  <span class="">2022 Passed Out</span>
+                  <p class='para'>          
+                   Madras Institute of Technology, I obtained a B.E in Production Engineering. 
+                  </p>
+                </div>
+
+                <div class="experience">
+                      <h1 class='heading'>Advertyzement</h1>
+                      <span>Oct-2022 -Oct-2023</span>
+                      <p class='para'>  
+                            Eventually did an internship at Advertyzement from February 2023 onwards, working as a Backend Dev capable of managing fastAPI microservices and a bit of DevOps in AWS as well.
+                            After working on Python's Asynchronous functions, I became fascinated with concurrency and multithreading, which eventually led me to Go.
+                            For a few of my hobby projects, I code in Golang; I love Go's concurrency.
+                            <br><br>
+                            
+                      </p>
+                </div>
+
+                <div class="experience">
+                  <h1 class='heading'>Ethereal Machines</h1>
+                  <span class="">Feb-2024 - present</span>
+                  <p class='para'>          
+                        As a Junior Python Developer, working on the core application which utilises the open source stuffs like GTK3 and linux, yes it's about Desktop application UI 
+                  </p>
+                </div>
+             
+                <p class='para'>          
+                  "You can't understand everything, but you should push yourself to understand the system."
+                </p>
+        
+            </div>
+        
         </section>
-       <style>
-        .about{
-  height: calc(100vh - 70px);
-    width: 100%;
-    color:#01015c;
-    font-family: "Monaco",Monospace	;
-}
+        <style>
+            .about {
+                height: calc(100vh - 70px);
+                width: 100%;
+                color: #01015c;
+                font-family: "Monaco", Monospace;
+                transition: margin-left 0.5s; /* Add transition for smooth sliding effect */
+                margin-left: 0; /* Initially hide sidebar */
+            }
+            .h1{
+              text-align: left;
+            }
 
-.para{
-    font-size:x-large;
-    padding-left:20%;
-    padding-right: 20%;
-    padding-top: 30px;
-    padding-bottom: 10px;
-    color: #2f5048;
-    font-size: x-large;
-    font-weight:bolder;
-    font-family: 'PT Sans', sans-serif;
-}
-.heading{
-    padding: 5px;
-    text-align:left;
-    font-family: "Monaco",Monospace	;
-    font-size:xx-large;
-    font-weight: bolder;
-    color: #0f0ff9;
-}
+            .p{
+              text-align:left;
+            }
+            .para {
+                font-size: x-large;
+                padding-left: 20%;
+                padding-right: 20%;
+                padding-top: 30px;
+                padding-bottom: 10px;
+                color: #19e819;
+                font-size: x-large;
+                font-weight: bolder;
+                text-align: left;
+                font-family: 'PT Sans', sans-serif;
+            }
 
-img{
-    border-radius: 3%;
-}
+            .heading {
+                padding: 5px;
+                font-family: "Monaco", Monospace;
+                font-size: xx-large;
+                font-weight: bolder;
+                color: #c5e470;
+                text-align: center; /* Align heading to center */
+            }
 
-img:hover {
-    scale: 1.25;
-    animation-delay: 3s;
-} 
+            img {
+                border-radius: 3%;
+                display: block; /* Center-align the image */
+                margin: 0 auto; /* Center-align the image */
+            }
 
+            img:hover {
+                scale: 1.25;
+                animation-delay: 3s;
+            }
 
-.sites{
-    list-style-type: none;
-    margin: 0;
-    justify-content: center;
-    overflow: hidden; 
-    align-content:center;display: flex;
-  }
+            .sites {
+                list-style-type: none;
+                margin: 0;
+                justify-content: center;
+                overflow: hidden;
+                align-content: center;
+                display: flex;
+            }
 
-  .layout {
+            .layout {
+                display: grid;
+                grid: ". body" 100%/75%;
+                gap: 8px;
+            }
 
-    display: grid;
-    grid:". body" 100%/75%;
-    gap: 8px;
-  }
-  
-  .body { grid-area: body;
-padding-right: 50px;
-padding-top: 50px 
-}
+            .body {
+                grid-area: body;
+                padding-right: 50px;
+                padding-top: 50px;
+                text-align:left; /* Align content in the .body div to center */
+            }
 
-.sidebar{
-  padding-right: 50px;
-}
+            .sidebar {
+                padding-right: 50px;
+                text-align: center; /* Align content in the .sidebar div to center */
+            }
 
-       </style>         
-      </div>
+            .experience{
+               background-color: #3939e2;
+               color: aliceblue;
+               border-radius: 5px;
+               margin-bottom: 10px; /* Add margin between each experience */
+            }
+
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #ffffff;
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            #toggleButton {
+                background-color: #16a571;
+                color: rgb(221, 235, 221);
+                border: none;
+                padding: 10px 20px;
+                text-align: center;
+                font-family: "Monaco", Monospace;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                border-radius: 5px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+
+        </style>
+
+        <script>
+            document.getElementById('toggleButton').addEventListener('click', function() {
+                var sidebar = document.querySelector('.experience');
+                sidebar.classList.toggle('active');
+            });
+        </script>
+
+    </div>
 </body>
 </html>
