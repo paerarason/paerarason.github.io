@@ -20,18 +20,18 @@
 
         <section class="layout">
             <div class="sidebar">         
-                <div class="experience">
-                  <h1 class='heading'>Alma mater</h1>
-                  <span class="year">2022 Passed Out</span>
-                  <p class='para'>          
+                <div class="experience-div">
+                  <h1 >Alma mater <span class="year">2022 Passed Out</span></h1>
+                 
+                  <p >          
                    Madras Institute of Technology, I obtained a B.E in Production Engineering. 
                   </p>
                 </div>
 
-                <div id="experience" class="experience">
-                      <h1 class='heading'>Advertyzement</h1>
-                      <span class="year">Oct-2022 -Oct-2023</span>
-                      <p class='para'>  
+                <div id="experience" class="experience-div">
+                      <h1 >Advertyzement <span class="year">Oct-2022 -Oct-2023</span></h1>
+                      
+                      <p >  
                             Eventually did an internship at Advertyzement from February 2023 onwards, working as a Backend Dev capable of managing fastAPI microservices and a bit of DevOps in AWS as well.
                             After working on Python's Asynchronous functions, I became fascinated with concurrency and multithreading, which eventually led me to Go.
                             For a few of my hobby projects.
@@ -40,10 +40,10 @@
                       </p>
                 </div>
 
-                <div class="experience">
-                  <h1 class='heading'>Ethereal Machines</h1>
-                  <span class="year">Feb-2024 - present</span>
-                  <p class='para'>          
+                <div class="experience-div">
+                  <h1 >Ethereal Machines <span class="year">Feb-2024 - present</span></h1>
+                
+                  <p >          
                         As a Junior Python Developer, working on the core application which utilises the open source stuffs like GTK3 and linux, yes it's about Desktop application UI 
                   </p>
                 </div>
@@ -54,13 +54,50 @@
             
         </section>
         <div id="footer" class="experience">
-            <a href="https://www.linkedin.com/in/paerarason/"><img src="link.png"></a>
+            <a  class="profile" href="https://www.linkedin.com/in/paerarason/">Linkedin</a>
             <br>
-            <a href="https://www.github.com/paerarason/"><img src="git.png"></a>
+            <a class="profile" href="https://www.github.com/paerarason/">github</a>
             </p>
         </div>
         </div>
         <style>
+
+
+            .profile{
+                color: #93d1ef;
+                font-size: x-large;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                
+            }
+
+              .experience-div{
+               background-color: #ffffff;
+               color: rgb(0, 0, 0);
+               border-radius: 5px;
+               border-color: #7d31d8;
+               border-width: 2px;
+               border: #7d31d8;
+               font-size: x-large;
+                font-weight: bolder;
+               margin-bottom: 10px; /* Add margin between each experience */
+            }
+
+
+
+            .experience-div:hover{
+               background-color: #000000;
+               color: rgb(255, 255, 255);
+               border-radius: 5px;
+               scale: 1.01;
+               border-radius: 10px;
+               border-color: #7d31d8;
+               border-width: 2px;
+               border: #7d31d8;
+               font-size: x-large;
+               margin-bottom: 10px; /* Add margin between each experience */
+            }
+
+    
             .about {
                 height: calc(100vh - 70px);
                 width: 100%;
@@ -82,6 +119,7 @@
                 font-weight: bolder;
                 text-align: left;
                 font-family: 'PT Sans', sans-serif;
+                color:rgb(0, 0, 0);
 
             }
             .p{
@@ -97,15 +135,21 @@
                 font-size: x-large;
                 font-weight: bolder;
                 text-align: left;
+                font-weight: 600;
                 font-family: 'PT Sans', sans-serif;
             }
+            .para:hover{
+                color: #000000;
+                scale: 1.1;
+            }
 
+            
             .heading {
                 padding: 5px;
                 font-family: "Monaco", Monospace;
                 font-size: xx-large;
                 font-weight: bolder;
-                color: rgb(0, 0, 0);
+                color:rgb(0, 0, 0);
                 text-align: center; /* Align heading to center */
             }
          
@@ -159,6 +203,20 @@
                margin-bottom: 10px; /* Add margin between each experience */
             }
 
+
+
+            .experience:hover{
+               background-color: #787070;
+               color: rgb(255, 255, 255);
+               border-radius: 5px;
+               scale: 1.01;
+               border-radius: 10px;
+               border-color: #7d31d8;
+               border-width: 2px;
+               border: #7d31d8;
+               margin-bottom: 10px; /* Add margin between each experience */
+            }
+
             .navbar {
                 position: fixed;
                 top: 0;
@@ -192,6 +250,9 @@
   color: white;
   width: 100%;
 }
+
+
+       
         </style>
 
         <script>
