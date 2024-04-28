@@ -8,8 +8,7 @@
 <body>
     <div class='navbar'>
        <a id="toggleButton" href="#about">About</a>
-       <a id="toggleButton" href="#education">Alma Mater</a>
-       <a id="toggleButton" href="#">Experience</a> 
+       <a id="toggleButton" href="#experience">Experience</a> 
        <a id="toggleButton" href="#projects">Projects</a>     
     </div>
 
@@ -19,47 +18,63 @@
         </style>
 
         <section class="layout">
-            <div class="sidebar">         
-                <div class="experience-div">
-                  <h1 >Alma mater <span class="year">2022 Passed Out</span></h1>
-                 
-                  <p >          
-                   Madras Institute of Technology, I obtained a B.E in Production Engineering. 
-                  </p>
-                </div>
-
-                <div id="experience" class="experience-div">
-                      <h1 >Advertyzement <span class="year">Oct-2022 -Oct-2023</span></h1>
-                      
-                      <p >  
-                            Eventually did an internship at Advertyzement from February 2023 onwards, working as a Backend Dev capable of managing fastAPI microservices and a bit of DevOps in AWS as well.
-                            After working on Python's Asynchronous functions, I became fascinated with concurrency and multithreading, which eventually led me to Go.
-                            For a few of my hobby projects.
-                            <br><br>
-                            
-                      </p>
-                </div>
-
-                <div class="experience-div">
-                  <h1 >Ethereal Machines <span class="year">Feb-2024 - present</span></h1>
-                
-                  <p >          
-                        As a Junior Python Developer, working on the core application which utilises the open source stuffs like GTK3 and linux, yes it's about Desktop application UI 
-                  </p>
-                </div>
-             
-                <p class='para'>          
-                  "You can't understand everything, but you should push yourself to understand the system."
-                </p>
             
+            <div class="sidebar"> 
+                
+                <div class="template" id="about">
+                    <h1>About</h1>
+                    <p>I'm a 23 year old Backend/Developer from  Tirupur, used to play cricket as a sport and represented in ZONALs and
+                         INTER-ZONAL for the College as a Fastbowler, This sport gave the confidence and the about think out of the box in pressure situations hope that made me a problem solver
+                         <br><br>
+                         For Bachelor's went to Madras Institute of Technology, I obtained a degree in Production Engineering. with 7.77/10 
+                        </p>
+                </div>
+               
+
+                <div class="template" id="experience">
+                <h1>Experience</h1>
+                    
+                    
+                    <div class="experience-div">
+                        <h1 class="company">Ethereal Machines <span class="year">Feb-2024 - present</span></h1>
+                        <p class="content">As a Junior Python Developer, working on the core application which utilises the open source
+                            stuffs like GTK3 and linux, yes it's about Desktop application UI </p>
+                    </div>
+                <div class="experience-div">
+                    <h1 class="company">Advertyzement <span class="year">Oct-2022 -Oct-2023</span></h1>
+                    <p class="content">Eventually did an internship at Advertyzement from AUG-2023 TO SEP-2023, worked there as a
+                        Backend Dev capable of managing fastAPI microservices and a bit of DevOps in AWS as well.
+                        After working on Python's Asynchronous functions, I became fascinated with concurrency and multithreading, which
+                        eventually led me to Go.
+                        For a few of my hobby projects.<br></p>
+                </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="template" id="projects">
+                    <h1>Projects</h1>
+                    <div class="experience-div">
+                        <h1 class="company">EVENT API for CRM </h1>
+                        <p class="content"><br></p>
+                    </div>
+                
+                    <div class="experience-div">
+                        <h1 class="company">Ethereal Machines <span class="year">Feb-2024 - present</span></h1>
+                        <p class="content">As a Junior Python Developer, working on the core application which utilises the open source
+                            stuffs like GTK3 and linux, yes it's about Desktop application UI </p>
+                    </div>
+                    <p class='para'>"You can't understand everything, but you should push yourself to understand the system."</p>
+                
+                </div>
+                </div>
+                
+
+               
         </section>
-        <div id="footer" class="experience">
-            <a  class="profile" href="https://www.linkedin.com/in/paerarason/">Linkedin</a>
-            <br>
-            <a class="profile" href="https://www.github.com/paerarason/">github</a>
-            </p>
-        </div>
-        </div>
+       
         <style>
 
 
@@ -69,26 +84,52 @@
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                 
             }
+                  
+            .template{
+                color: #000000;
+                text-align: left;
+                padding: 20px;
+                font-size:x-large;
+                font-weight: bolder;
+                font-family: "Monaco", Monospace;
+                
+            }
 
+            .content{
+                text-align: left;
+                padding:10px;
+                padding-left: 25px;
+            }
               .experience-div{
-               background-color: #ffffff;
-               color: rgb(0, 0, 0);
+              background-color: #000000;
+               color: rgb(255, 255, 255);
                border-radius: 5px;
+               border-radius: 15px;
                border-color: #7d31d8;
                border-width: 2px;
                border: #7d31d8;
+               text-align: left;
                font-size: x-large;
                 font-weight: bolder;
-               margin-bottom: 10px; /* Add margin between each experience */
+                padding-left: 10px;
+                padding-right: 10px;
+               padding-bottom: 20px; 
             }
 
-
+            .company{
+                text-align: left;
+                padding:10px;
+                font-size: xx-large;
+                font-weight: bolder;
+                color: rgb(0, 255, 183)
+            }
 
             .experience-div:hover{
                background-color: #000000;
                color: rgb(255, 255, 255);
-               border-radius: 5px;
+               border-radius: 10px;
                scale: 1.01;
+               transition-timing-function: 1s;
                border-radius: 10px;
                border-color: #7d31d8;
                border-width: 2px;
@@ -107,7 +148,8 @@
                 margin-left: 0; /* Initially hide sidebar */
             }
             .h1{
-              text-align: left;
+              text-align: center;
+              align-content: center;
             }
              
             #toggleButton:hover{
@@ -119,7 +161,7 @@
                 font-weight: bolder;
                 text-align: left;
                 font-family: 'PT Sans', sans-serif;
-                color:rgb(0, 0, 0);
+                color:rgb(255, 255, 255);
 
             }
             .p{
@@ -162,8 +204,8 @@
 
             .layout{
                 padding-top: 80px;
-                padding-left: 10%;
-                padding-right: 10%;
+                padding-left: 15%;
+                padding-right: 15%;
             }
             .sites {
                 list-style-type: none;
@@ -188,10 +230,7 @@
                 text-align: center; /* Align content in the .sidebar div to center */
             }
 
-           #work{
-
-           }
-
+         
 
             .experience{
                background-color: #ffffff;
