@@ -5,296 +5,255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="static/click_2767163.png" type="image/icon type">
-    <title>paerarason</title>
+    <title>paerarason.in</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bevan&family=Rubik+Mono+One&display=swap');
-
-        @font-face {
-            font-family: 'terminal-font';
-            src: url('fontss/JetBrainsMono-Medium.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'terminal-font-bold';
-            src: url('fonts/JetBrainsMono-ExtraBold.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Punktype&display=swap');
 
         body {
             margin: 0;
-            font-family: "Monaco", Monospace;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f9fdfc;
+            color: #0a0a0a;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
         }
 
+        /* Navbar */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #000000;
-            padding: 10px 0;
-            text-align: center;
-            z-index: 10;
-        }
-
-        #toggleButton {
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            border: none;
-            font-size: 16px;
-            padding: 10px 20px;
-            text-align: center;
-            font-family: "Monaco", Monospace;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-weight: bolder;
-            cursor: pointer;
-        }
-
-        .about {
-            padding-top: 80px;
-            padding-left: 10%;
-            padding-right: 10%;
-            transition: margin-left 0.5s;
-        }
-
-        .template {
-            color: #000000;
-            text-align: left;
-            padding: 20px;
-            font-size: large;
-            font-weight: bolder;
-        }
-
-        .terminal {
-            background-color: #2a3638;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(72, 70, 70, 0.5);
-            margin-bottom: 20px;
-        }
-
-        .menu-bar {
-            display: flex;
-            color: #ffffff;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #282a2f;
-            padding: 5px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 5px;
-        }
-
-        .menu {
-            font-size: large;
-            font-weight: bolder;
-        }
-
-        .controls {
-            display: flex;
-            gap: 10px;
-        }
-
-        .control {
-            width: 20px;
+            background-color: #191b1b;
             display: flex;
             justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            cursor: pointer;
+            padding: 10px 0;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .minimize {
-            background-color: #d8ea0a;
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        .maximize {
-            background-color: #65c412;
+        .navbar a:hover {
+
+            color: #68c277;
+            scale: 1.1;
         }
 
-        .close {
-            background-color: #ed0c22;
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 60px 10px 30px;
+            background: #ffffff;
+            border-bottom: 5px solid #566861;
+            margin-top: 50px;
         }
 
-        .company {
-            text-align: left;
-            font-size: large;
-            color: rgb(9, 156, 102);
-            padding: 3px;
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #030008;
         }
 
-        .content {
-            color: #3dabcd;
-            text-align: left;
-            font-size: large;
-            padding: 3px;
+        .header p {
+            font-size: 1.8rem;
+            margin: 10px 0;
         }
 
-        .layout {
-            padding-top: 80px;
-            padding-left: 5%;
-            padding-right: 5%;
+        /* Chapters Layout */
+        .chapters {
+            padding: 40px 10%;
         }
 
-        .para {
-            font-size: large;
-            padding-left: 5%;
-            padding-right: 5%;
-            padding-top: 30px;
-            padding-bottom: 10px;
-            color: hsl(154, 88%, 6%);
-            font-weight: bolder;
-            text-align: left;
-            font-weight: 600;
+        .chapter {
+            margin-bottom: 40px;
+            scroll-margin-top: 70px; /* Offsets the scroll position for fixed navbar */
         }
 
-        .module {
-            color: #e8ae4a;
-
+        .chapter h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #657cad;
         }
 
-        /* Media Queries for Responsiveness */
+        .chapter p {
+            text-indent: 5em;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .chapter img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .chapter-divider {
+            height: 2px;
+            background-color: #226963;
+            margin: 30px 0;
+        }
+        .project {
+            padding-left: 3%;
+        }
+
+
+        .project h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #84916b;
+        }
+
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #53767c;
+            color: #ffffff;
+            padding: 20px 10px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #fddba3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
         @media (max-width: 768px) {
-            .layout {
-                padding-left: 5%;
-                padding-right: 5%;
+            .header h1 {
+                font-size: 2rem;
             }
 
-            .navbar {
-                font-size: medium;
+            .chapters {
+                padding: 20px 5%;
             }
 
-            .template,
-            .company,
-            .content,
-            .para {
-                font-size: medium;
+            .navbar a {
+                font-size: 0.9rem;
+                margin: 0 10px;
             }
-
-            .about {
-                padding-left: 5%;
-                padding-right: 5%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navbar {
-                font-size: small;
-                padding: 5px 0;
-            }
-
-            #toggleButton {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
-
-            .template,
-            .company,
-            .content,
-            .para {
-                font-size: small;
-            }
-
-            .about {
-                padding-left: 2%;
-                padding-right: 2%;
-            }
-
-
         }
     </style>
 </head>
 
 <body>
-    <div class='navbar'>
-        <a id="toggleButton" href="#about">About</a>
-        <a id="toggleButton" href="#experience">Experience</a>
-        <a id="toggleButton" href="#projects">Projects</a>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#chapter1">Tech</a>
+        <a href="#chapter2">Dev</a>
+        <a href="#chapter3">Cricket</a>
+        <a href="#chapter4">Projects</a>
+        <a href="#chapter5">Travels</a>
     </div>
 
-    <div class='about'>
-        <section class="layout">
-            <div class="sidebar">
-                <div class="template" id="about">
-                    <h1>About</h1>
-                    <p>
-                        I am a 23-year-old Application/Backend developer (PYTHON-RUST) with a strong foundation in
-                        production engineering, having graduated from the Madras Institute of Technology with a CGPA of
-                        7.77/10. My journey in tech has been complemented by my experience as a fast bowler in cricket,
-                        where I represented my college in ZONAL and INTER-ZONAL tournaments. Playing cricket at a
-                        competitive level taught me the importance of thinking outside the box and staying calm under
-                        pressure—skills that have been invaluable in my career as a problem solver and developer.
-                    </p>
-                </div>
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Paerarason aka Peru</h1>
+        <p>Application Developer</p>
+    </div>
 
-                <div class="terminal">
-                    <div class="menu-bar">
-                        <div class="menu">
-                            <h5 class="window-head">EXPERIENCE</h5>
-                        </div>
-                        <div class="controls">
-                            <span class="control minimize">-</span>
-                            <span class="control maximize">+</span>
-                            <span class="control close">x</span>
-                        </div>
-                    </div>
-                    <h3 class="company">(Feb2024-present) paerarason:<span
-                            class="module">~Experience/Ethereal_Machines$</span><span class="content"> As a Application
-                            Developer, I work on the core application utilizing open-source APIs like PyGTK3. I
-                            primarily
-                            develop and run applications on Linux distributions, focusing on creating robust desktop
-                            applications.</span></h3>
-
-                    <h3 class="company">(Oct2022-Oct2023) paerarason:<span
-                            class="module">~Experience/Advertyzement-$</span><span class="content"> I completed an
-                            internship at Advertyzement from August 2023 to September 2023, where I worked as a Backend
-                            Developer
-                            managing FastAPI microservices and performing some DevOps tasks in AWS. My experience with
-                            Python's asynchronous
-                            functions sparked my interest in concurrency and multithreading, which eventually led me to
-                            explore Go for several hobby
-                            projects.<br></span>
-                    </h3>
-                </div>
-
-                <div class="terminal">
-                    <div class="menu-bar">
-                        <div class="menu">
-                            <h5 class="window-head">PROJECTS</h5>
-                        </div>
-                        <div class="controls">
-                            <span class="control minimize">-</span>
-                            <span class="control maximize">+</span>
-                            <span class="control close">x</span>
-                        </div>
-                    </div>
-                    <h1 class="company">EVENT API for CRM</h1>
-
-                    <h3><span class="content">API for event registration, a CRM-like API for event registration by
-                            customers
-                            and event managers. It manages multiple events and registered customers with multiple
-                            role-based
-                            access and token-based authentication implemented using the DRF Python
-                            framework...................<br></span>
-                    </h3>
-
-
-                    <p class="content"></p>
-
-                    <h1 class="company">Load Balancer</h1>
-                    <h3 class="content">Based on the Round Robin algorithm, it handles HTTP requests and acts as a load
-                        balancer that can be placed in front of the web server
-                        .............................
-                    </h3>
-                </div>
-            </div>
-            <p class='para'>"You can't understand everything, but you should push yourself to understand the system."
+    <!-- Chapters Section -->
+    <div class="chapters">
+        <!-- Chapter 1 -->
+        <div class="chapter" id="chapter1">
+            <h2>Chapter 1: About myself</h2>
+            <p>
+                Born with an innate curiosity for technology, my story begins in the classrooms of the Madras Institute of Technology. 
+                Here, I not only honed my skills in Production Engineering but also discovered my passion for solving real-world problems using technology.
             </p>
-        </section>
+            <img src="static/chapter1.jpg" alt="Tech Chapter Image">
+    
+
+            <div class="chapter-divider"></div>
+        </div>
+
+        <!-- Chapter 2 -->
+        <div class="chapter" id="chapter2">
+            <h2>Chapter 2:Engineer -> developer</h2>
+            <p>
+                Develeper at <a href="https://www.etherealmachines.com/"><b>Ethereal Machines</b></a>                
+            </br> </\>From mastering Python to diving deep into Rust, this chapter captures the essence of my technical growth. 
+                Through internships and hands-on projects, I delved into the realms of application development and backend systems, 
+                learning to build scalable and efficient solutions.
+            </p>
+            
+            <div class="chapter-divider"></div>
+        </div>
+
+        <!-- Chapter 3 -->
+        <div class="chapter" id="chapter3">
+            <h2>Chapter 3: The Fast Bowler</h2>
+            <p>
+                Cricket has always been a significant part of my life. Representing my college in ZONAL and INTER-ZONAL tournaments as a fast bowler 
+                taught me the value of perseverance, teamwork, and thinking under pressure. These lessons have seamlessly translated into my professional journey.
+            </p>
+           <img src="static/chapter3.jpg" alt="Tech Chapter Image">
+            <div class="chapter-divider"></div>
+        </div>
+
+        <!-- Chapter 4 -->
+       <div class="chapter" id="chapter4">
+    <h2>Chapter 4: Projects</h2>
+    
+    <div class="project" id="project1">
+        <h3>CNC Machine Desktop Application</h3>
+        <p>
+            Developed a desktop application that represents the Machine's UI using GTK3. 
+            It handles all Machines's functionality, including architecture design, development, and testing.
+        </p>
     </div>
+    
+    <div class="project" id="project2">
+        <h3>Real-time API Development</h3>
+        <p>
+            Created APIs for real-time CNC machine control and data collection. 
+            Managed a time-series database and developed both REST (Django) and WebSocket (Socket.IO) APIs 
+            for backend and frontend real-time dashboards.
+        </p>
+    </div>
+    
+  
+    <div class="chapter-divider"></div>
+</div>
+
+
+        <div class="chapter" id="chapter5">
+            <h2>Chapter 5:Travels </h2>
+            <p>
+                Exploring different cultures and experiences has been a significant part of my life.
+                
+            </p>
+            <img src="static/chapter5.jpg" alt="Skills Chapter Image">
+
+            
+            <div class="chapter-divider"></div>
+        </div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Paerarason. All Rights Reserved.</p>
+        <p>Connect with me on <a href="https://github.com/paerarason">GitHub</a> | <a href="https://linkedin.com/in/paerarason/">LinkedIn</a></p>
+    </footer>
 </body>
 
 </html>
