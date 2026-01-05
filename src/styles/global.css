@@ -1,0 +1,60 @@
+@import './variables.css';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    /* Let the scroll container handle scrolling if using a wrapper, or use html as container */
+}
+
+/* Ensure the root react div takes full space */
+#root {
+    height: 100vh;
+    overflow-y: scroll;
+    /* Main scroll container */
+    scroll-snap-type: y mandatory;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    /* padding removed to allow full 100vh sections */
+    padding: 0;
+}
+
+.section {
+    min-height: fit-content;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
