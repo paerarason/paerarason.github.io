@@ -1,0 +1,56 @@
+:root {
+  /* Colors */
+  --color-bg: #000000;
+  --color-text: #FFFFFF;
+  --color-accent: #98dad8;
+  /* Teal */
+  /* Gold/Bronze accent */
+  --color-secondary: #f4f4f4;
+  --color-muted: #666;
+
+  /* Typography */
+  --font-main: 'Vend Sans', sans-serif;
+  --font-heading: 'Vend Sans', sans-serif;
+  /* Premium feel */
+
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.4s ease;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
