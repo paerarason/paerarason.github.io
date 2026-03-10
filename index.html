@@ -16,6 +16,17 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <!-- Single Page Application redirect for GitHub Pages -->
+  <script>
+    // Handle SPA routing on GitHub Pages (for direct URL access / page refresh)
+    (function(){
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
 </body>
 
 </html>
