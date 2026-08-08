@@ -21,13 +21,12 @@ const Spotlight = () => {
                 width: '15px',
                 height: '15px',
                 borderRadius: '50%',
-                backgroundColor: '#FFD700', // Solid Gold/Yellow
-                boxShadow: '0 0 5px #FFD700',
+                backgroundColor: 'var(--color-link)',
+                boxShadow: '0 0 6px var(--color-link)',
                 pointerEvents: 'none',
                 zIndex: 9999,
-                transform: `translate(${position.x - 7.5}px, ${position.y - 7.5}px)`, // Cenetered
-                transition: 'transform 0.05s linear', // Faster, linear follow
-                mixBlendMode: 'normal'
+                transform: `translate(${position.x - 7.5}px, ${position.y - 7.5}px)`,
+                transition: 'transform 0.05s linear'
             }}
         />
     );

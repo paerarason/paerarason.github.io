@@ -1,0 +1,19 @@
+/* Breakpoint: ≤600px trims padding/font-size for small screens. */
+@media (max-width: 600px) {
+  .doc-container {
+    padding: 2rem 1.1rem 4rem;
+  }
+
+  .doc-title {
+    font-size: 1.1rem;
+  }
+
+  .doc-meta-columns {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .doc-meta-col-right {
+    text-align: left;
+  }
+}

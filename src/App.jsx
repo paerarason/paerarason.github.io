@@ -1,14 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import AnimatedRoutes from './components/AnimatedRoutes';
+import Home from './pages/Home';
+import Spotlight from './components/Spotlight';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <AnimatedRoutes />
-      </div>
-    </Router>
+    <>
+      <Spotlight />
+      <Home />
+    </>
   );
 }
 
