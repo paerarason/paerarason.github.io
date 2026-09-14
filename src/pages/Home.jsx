@@ -3,69 +3,18 @@ import DocHeader from '../components/DocHeader';
 import DocSection, { DocSubsection } from '../components/DocSection';
 
 const Home = () => {
-    const etherealGroups = [
-        {
-            name: 'API Development',
-            bullets: [
-                'Built and deployed a CRM module in Django for machine lifecycle management, improving internal team efficiency by 25%.',
-                'Implemented Redis-based caching, reducing API response times from ~200ms to 50ms on frequently accessed endpoints.',
-                'Designed and optimized a scalable database schema for CNC machine data, reducing query latency by 35% and enabling high-throughput real-time data flow.',
-                'Engineered WebSocket communication to deliver real-time machine status updates with sub-second latency, supporting 500+ concurrent connections.',
-                'Implemented Microsoft OAuth authentication and Swagger/OpenAPI documentation across all API implementations.'
-            ]
-        },
-        {
-            name: 'Data Collection Driver',
-            bullets: [
-                'Upgraded and streamlined the existing machine status collection code to better fit the backend architecture.',
-                'Established an FTP workflow for programmers to transfer files from the NAS or backend server, based on the production schedule or on demand for NPD (New Product Development) machines.',
-                'Enabled seamless FTP-based integration across the Driver → Backend → Frontend pipeline.',
-                'Automated the SAP integration pipeline up to auto-assignment-level machine scheduling, cutting manual planning effort by 70%.',
-                'Developed and integrated Django APIs with the InfluxDB time-series database, processing 10K+ machine events per day and improving monitoring reliability by 40%.'
-            ]
-        },
-        {
-            name: 'eSSL Device Driver',
-            bullets: [
-                'Designed and implemented a high-performance network daemon and custom device driver to interface with eSSL biometric hardware, establishing a centralized architecture to manage and synchronize fingerprint templates across a distributed factory network.',
-                'Engineered a low-latency biometric authentication pipeline that securely validates factory-floor transactions in real time, using network socket programming to stream and process verification requests reliably.',
-                'Optimized system fault-tolerance and uptime for the background service, ensuring continuous, tamper-proof logging and multi-point authentication for critical operational files and machinery logs.'
-            ]
-        },
-        {
-            name: 'Database Migration',
-            bullets: [
-                'Migrated 2 billion rows from InfluxDB to ClickHouse, restructuring the dataset into an event-based model and achieving a 93% compression ratio versus the original volume.',
-                'Migrated the historical data pipeline from InfluxDB to PostgreSQL using an ETL model, accelerating REST API responses by 10x.',
-                'Automated anomaly detection and reporting with Python-based data-processing workflows, triggering detailed email alerts via Azure Outlook and reducing downtime by 15%.',
-                'Developed a shortlisting script for first-level candidate screening based on required technical skills, reducing recruiter manual effort by 60%.'
-            ]
-        },
-        {
-            name: 'External Integration',
-            bullets: [
-                'Built a QR-code sticker system — required across the manufacturing process, from material identification to shipment — generated directly from SAP production order details or invoices.',
-                'Made the system robust enough to track which material belongs to whom and at what stage of the manufacturing process.',
-                'Integrated the QR generation system with TSC industrial sticker printers (multiple models) using TSPL commands over TCP sockets, falling back to a Samba client connection for printers without Ethernet connectivity.'
-            ]
-        },
-        {
-            name: 'Deployment Scripting (CI/CD)',
-            bullets: [
-                'Built a GitLab webhook-triggered deployment pipeline that runs the build and test procedures on the server automatically.',
-                'Restarted the relevant PM2 process to apply changes as part of the deployment flow.'
-            ]
-        }
+    const etherealHighlights = [
+        'Migrated 2 billion rows from InfluxDB to ClickHouse, restructuring the dataset into an event-based model and achieving a 93% compression ratio.',
+        'Built and deployed a CRM module in Django for machine lifecycle management, improving internal team efficiency by 25%.',
+        'Engineered WebSocket communication for real-time machine status updates, supporting 500+ concurrent connections.',
+        'Designed a biometric authentication pipeline and custom device driver (eSSL) to secure factory-floor operations.',
+        'Automated SAP integration for machine scheduling and built a QR-code system for tracking materials through manufacturing.'
     ];
 
-    const advertyzementBullets = [
-        'Spearheaded transition from monolithic to microservices architecture, improving scalability and performance of core services while reducing deployment time by 40%.',
-        'Designed and implemented a robust Notification Microservice (email, SMS, WhatsApp) with a queuing mechanism, ensuring non-blocking delivery and supporting 50K+ daily notifications without bottlenecks.',
-        'Integrated Firebase Cloud Messaging (FCM) into the Notification service, enabling real-time push updates across multiple platforms.',
-        'Resolved high-impact issues in the File Management Microservice, optimizing file upload/download workflows and reducing error rates by 30%.',
-        'Developed an internal SDK for the Notification Microservice to simplify adoption across teams, increasing developer productivity and promoting consistent usage.',
-        'Collaborated on the CI/CD pipeline with GitLab, streamlining automated deployments and improving release frequency.',
-        'Optimized microservice communication and scaling using Docker & AWS (EC2, RDS), enabling cost-efficient horizontal scaling.'
+    const advertyzementHighlights = [
+        'Led the transition from a monolithic to microservices architecture, reducing deployment time by 40%.',
+        'Built a Notification microservice (email, SMS, WhatsApp, FCM push) supporting 50K+ daily notifications, plus an internal SDK adopted by other teams.',
+        'Resolved critical issues in the File Management microservice, reducing error rates by 30%.'
     ];
 
     const bookKnowledge = [
@@ -100,11 +49,13 @@ const Home = () => {
         { category: 'System Design', items: ['Microservices', 'Event-driven Architecture', 'Caching', 'Scalability', 'Distributed Systems', 'Shell Scripting'] }
     ];
 
+    const songs = ['Jaalakaari & Vizhi Veekura', 'Aasa Kooda', 'Pavazha Malli'];
+
     const travelWaypoints = [
         'Ooty — April 2022',
         'Wayanad — April 2023',
         'Munnar — May 2024',
-        'Coorg — September 2025 (planned)'
+        'Coorg — September 2025'
     ];
 
     return (
@@ -135,98 +86,36 @@ const Home = () => {
             <nav className="doc-frontmatter" aria-label="Table of Contents">
                 <p className="doc-frontmatter-title">Table of Contents</p>
                 <ul className="doc-toc-list">
-                    <li><a href="#introduction">1. Introduction</a></li>
-                    <li><a href="#experience">2. Professional Experience</a></li>
-                    <li className="doc-toc-sub"><a href="#exp-ethereal">2.1 Ethereal Machines</a></li>
-                    <li className="doc-toc-sub"><a href="#exp-advertyzement">2.2 Advertyzement</a></li>
-                    <li><a href="#education">3. Education</a></li>
-                    <li><a href="#book-knowledge">4. Book Knowledge</a></li>
-                    <li><a href="#certifications">5. Certifications</a></li>
-                    <li><a href="#key-skills">6. Key Skills</a></li>
-                    <li><a href="#interests">7. Personal Interests</a></li>
-                    <li><a href="#travel">8. Travel and Field Notes</a></li>
-                    <li><a href="#contact">9. Author's Address</a></li>
+                    <li><a href="#spotify-playlist">1. My Spotify Playlist</a></li>
+                    <li><a href="#travel">2. Travel and Field Notes</a></li>
+                    <li><a href="#introduction">3. Motivation</a></li>
+                    <li><a href="#education">4. Education</a></li>
+                    <li><a href="#book-knowledge">5. Book Knowledge</a></li>
+                    <li><a href="#certifications">6. Certifications</a></li>
+                    <li><a href="#key-skills">7. Key Skills</a></li>
+                    <li><a href="#interests">8. Personal Interests</a></li>
+                    <li><a href="#experience">9. Professional Experience</a></li>
+                    <li className="doc-toc-sub"><a href="#exp-ethereal">9.1 Ethereal Machines</a></li>
+                    <li className="doc-toc-sub"><a href="#exp-advertyzement">9.2 Advertyzement</a></li>
+                    <li><a href="#contact">10. Author's Address</a></li>
                 </ul>
             </nav>
 
-            <DocSection id="introduction" number="1" title="Introduction">
+            <DocSection id="spotify-playlist" number="1" title="My Spotify Playlist">
                 <p>
-                    Born with an innate curiosity for technology, my story begins in the classrooms of the Madras
-                    Institute of Technology. Here, I not only honed my skills in Production Engineering but also
-                    discovered my passion for solving real-world problems using technology.
+                    A running playlist of songs on repeat lately —{' '}
+                    <a href="https://open.spotify.com/playlist/2zbsf0wgUkzKQUMHF1gXKY" target="_blank" rel="noopener noreferrer">
+                        listen on Spotify
+                    </a>.
                 </p>
-            </DocSection>
-
-            <DocSection id="experience" number="2" title="Professional Experience">
-                <DocSubsection id="exp-ethereal" number="2.1" title="Ethereal Machines — Backend Developer (Feb 2024 – Present)">
-                    {etherealGroups.map((group, index) => (
-                        <div key={index} className="doc-subgroup">
-                            <p className="doc-subgroup-title">{group.name}</p>
-                            <ul className="doc-list">
-                                {group.bullets.map((bullet, i) => (
-                                    <li key={i}>{bullet}</li>
-                                ))}
-                            </ul>
-                        </div>
+                <ol className="doc-list doc-list--ranked">
+                    {songs.map((song, index) => (
+                        <li key={index}>{song}</li>
                     ))}
-                </DocSubsection>
-
-                <DocSubsection id="exp-advertyzement" number="2.2" title="Advertyzement — Backend Developer (Aug 2022 – Oct 2023)">
-                    <ul className="doc-list">
-                        {advertyzementBullets.map((bullet, index) => (
-                            <li key={index}>{bullet}</li>
-                        ))}
-                    </ul>
-                </DocSubsection>
-
-                <p className="doc-note"><em>Additional field notes and reflections from these roles will be added here over time.</em></p>
+                </ol>
             </DocSection>
 
-            <DocSection id="education" number="3" title="Education">
-                <p>
-                    <strong>Bachelor's in Production Engineering</strong> — Madras Institute of Technology, Anna
-                    University (08/2018 – 06/2022)
-                </p>
-                <p className="doc-tech-line">CGPA: 7.78/10</p>
-            </DocSection>
-
-            <DocSection id="book-knowledge" number="4" title="Book Knowledge">
-                <ul className="doc-list">
-                    {bookKnowledge.map((book, index) => (
-                        <li key={index}>{book}</li>
-                    ))}
-                </ul>
-            </DocSection>
-
-            <DocSection id="certifications" number="5" title="Certifications">
-                <ul className="doc-list">
-                    {certifications.map((cert, index) => (
-                        <li key={index}>
-                            <strong>{cert.title}</strong> — {cert.description}{' '}
-                            <span className="doc-tech-inline">(Focus: {cert.techStack.join(', ')})</span>
-                        </li>
-                    ))}
-                </ul>
-            </DocSection>
-
-            <DocSection id="key-skills" number="6" title="Key Skills">
-                <ul className="doc-list">
-                    {keySkills.map((group, index) => (
-                        <li key={index}><strong>{group.category}:</strong> {group.items.join(', ')}</li>
-                    ))}
-                </ul>
-            </DocSection>
-
-            <DocSection id="interests" number="7" title="Personal Interests">
-                <p>
-                    Cricket has always been a significant part of my life. Representing my college in ZONAL and
-                    INTER-ZONAL tournaments as a left-arm fast bowler taught me the value of perseverance, teamwork,
-                    and thinking under pressure — lessons that have seamlessly translated into my professional
-                    journey.
-                </p>
-            </DocSection>
-
-            <DocSection id="travel" number="8" title="Travel and Field Notes">
+            <DocSection id="travel" number="2" title="Travel and Field Notes">
                 <p>
                     This section is reserved for travel stories and field notes, added as new journeys are
                     documented. Known waypoints so far:
@@ -237,10 +126,99 @@ const Home = () => {
                     ))}
                     <li><em>[ more entries to come ]</em></li>
                 </ul>
-                <p className="doc-note"><em>Full stories for each trip will be added here over time.</em></p>
             </DocSection>
 
-            <DocSection id="contact" number="9" title="Author's Address">
+            <DocSection id="introduction" number="3" title="Motivation">
+                <p>
+                    Born with an innate curiosity for technology, my story begins in the classrooms of the Madras
+                    Institute of Technology. Here, I not only honed my skills in Production Engineering but also
+                    discovered my passion for solving real-world problems using technology.
+                </p>
+            </DocSection>
+
+            <DocSection id="education" number="4" title="Education">
+                <p>
+                    <strong>Bachelor's in Production Engineering</strong> — Madras Institute of Technology, Anna
+                    University (08/2018 – 06/2022)
+                </p>
+                <p className="doc-tech-line">CGPA: 7.78/10</p>
+            </DocSection>
+
+            <DocSection id="book-knowledge" number="5" title="Book Knowledge">
+                <ul className="doc-list">
+                    {bookKnowledge.map((book, index) => (
+                        <li key={index}>{book}</li>
+                    ))}
+                </ul>
+            </DocSection>
+
+            <DocSection id="certifications" number="6" title="Certifications">
+                <ul className="doc-list">
+                    {certifications.map((cert, index) => (
+                        <li key={index}>
+                            <strong>{cert.title}</strong> — {cert.description}{' '}
+                            <span className="doc-tech-inline">(Focus: {cert.techStack.join(', ')})</span>
+                        </li>
+                    ))}
+                </ul>
+            </DocSection>
+
+            <DocSection id="key-skills" number="7" title="Key Skills">
+                <ul className="doc-list">
+                    {keySkills.map((group, index) => (
+                        <li key={index}><strong>{group.category}:</strong> {group.items.join(', ')}</li>
+                    ))}
+                </ul>
+            </DocSection>
+
+            <DocSection id="interests" number="8" title="Personal Interests">
+                <p>
+                    Cricket has always been a significant part of my life. Representing my college in ZONAL and
+                    INTER-ZONAL tournaments as a left-arm fast bowler taught me the value of perseverance, teamwork,
+                    and thinking under pressure — lessons that have seamlessly translated into my professional
+                    journey.
+                </p>
+            </DocSection>
+
+            <DocSection id="experience" number="9" title="Professional Experience">
+                <DocSubsection id="exp-ethereal" number="9.1" title="Ethereal Machines — Backend Developer (Feb 2024 – Present)">
+                    <p className="doc-narrative">
+                        Joining Ethereal Machines meant stepping into systems that talk to real machines on a
+                        factory floor — not just APIs on a screen, but code that has to survive flaky networks,
+                        hardware quirks, and the occasional late-night page when a CNC line goes quiet. Migrating
+                        two billion rows into ClickHouse, wiring up a biometric device driver from scratch, chasing
+                        down FTP handshakes with printers that refuse to behave — these weren't things I set out to
+                        become an expert in, but the job kept handing me specific, weird problems, and solving them
+                        one at a time is basically the story of how I grew here.
+                    </p>
+                    <ul className="doc-list">
+                        {etherealHighlights.map((bullet, index) => (
+                            <li key={index}>{bullet}</li>
+                        ))}
+                    </ul>
+                </DocSubsection>
+
+                <DocSubsection id="exp-advertyzement" number="9.2" title="Advertyzement — Backend Developer (Aug 2022 – Oct 2023)">
+                    <p className="doc-narrative">
+                        This was my first real taste of building things that had to survive contact with other
+                        teams, not just other services. Tearing apart a monolith into microservices taught me less
+                        about architecture diagrams and more about communication — every service boundary is really
+                        a conversation about who owns what. Building the Notification service end-to-end, including
+                        an SDK other engineers actually used, is still one of the things I'm proudest of from that
+                        time: it's one thing to write code, another to hand it to someone else and have it just work
+                        for them.
+                    </p>
+                    <ul className="doc-list">
+                        {advertyzementHighlights.map((bullet, index) => (
+                            <li key={index}>{bullet}</li>
+                        ))}
+                    </ul>
+                </DocSubsection>
+
+                <p className="doc-note"><em>Additional field notes and reflections from these roles will be added here over time.</em></p>
+            </DocSection>
+
+            <DocSection id="contact" number="10" title="Author's Address">
                 <pre className="doc-address">
                     {'   Paerarason T\n   Bengaluru, India\n\n   Phone:    '}
                     <a href="tel:+917094894457">+91 7094894457</a>
@@ -250,8 +228,6 @@ const Home = () => {
                     <a href="https://github.com/paerarason" target="_blank" rel="noopener noreferrer">github.com/paerarason</a>
                     {'\n   LinkedIn: '}
                     <a href="https://linkedin.com/in/paerarason" target="_blank" rel="noopener noreferrer">linkedin.com/in/paerarason</a>
-                    {'\n   URI:      '}
-                    <a href="https://paerarason.in" target="_blank" rel="noopener noreferrer">paerarason.in</a>
                 </pre>
             </DocSection>
 

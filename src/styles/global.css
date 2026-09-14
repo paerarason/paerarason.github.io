@@ -2,9 +2,9 @@
 @import './responsive.css';
 
 .doc-container {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 6rem;
+  padding: 3rem 2rem 6rem;
 }
 
 .doc-meta {
@@ -42,14 +42,21 @@
 .doc-title {
   font-size: 1.3rem;
   font-weight: 700;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
   letter-spacing: 0.02em;
+}
+
+.doc-title-role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin: 0 0 0.3rem;
 }
 
 .doc-subtitle {
   font-style: italic;
   color: var(--color-muted);
-  margin: 0;
+  margin: 1rem 0 0;
   font-size: 0.95rem;
 }
 
@@ -103,6 +110,14 @@
   margin: 0 0 0.75rem;
 }
 
+.doc-narrative {
+  font-style: italic;
+  color: var(--color-text);
+  border-left: 2px solid var(--color-rule);
+  padding-left: 1rem;
+  margin: 0 0 1.25rem;
+}
+
 .doc-subgroup {
   margin: 1.25rem 0;
 }
@@ -131,6 +146,17 @@
   position: absolute;
   left: 0.2rem;
   color: var(--color-muted);
+}
+
+.doc-list--ranked {
+  counter-reset: rank;
+}
+
+.doc-list--ranked li::before {
+  counter-increment: rank;
+  content: counter(rank) ".";
+  color: var(--color-link);
+  font-weight: 700;
 }
 
 .doc-tech-line {
