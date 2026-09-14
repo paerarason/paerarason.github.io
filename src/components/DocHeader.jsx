@@ -15,7 +15,8 @@ const DocHeader = () => {
 
                 <div className="doc-meta-col doc-meta-col-right">
                     <p className="doc-meta-line">Paerarason T</p>
-                    <p className="doc-meta-line">Left-Arm Fast Bowler & Backend Developer</p>
+                    <p className="doc-meta-line">Left-Arm Fast Bowler</p>
+                    <p className="doc-meta-line">Backend Developer</p>
                     <p className="doc-meta-line">Bengaluru, India</p>
                     <p className="doc-meta-line">{issued}</p>
                 </div>
